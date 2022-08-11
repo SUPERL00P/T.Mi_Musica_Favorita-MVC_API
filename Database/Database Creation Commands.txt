@@ -1,0 +1,10 @@
+CREATE SCHEMA `favorite_songs` ;
+
+CREATE TABLE `favorite_songs`.`songs` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `Title` VARCHAR(100) NOT NULL,
+  `Group` VARCHAR(50) NOT NULL,
+  `Year` YEAR NOT NULL,
+  `Genre` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`Id`));
+

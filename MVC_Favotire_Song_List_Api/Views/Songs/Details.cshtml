@@ -1,0 +1,45 @@
+﻿@model MVC_Favotire_Song_List_Api.Models.Song
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            Titulo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Group)*@
+            Grupo/Autor
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Group)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Year)*@
+            Año de Estreno
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Genre)*@
+            Genero Musical
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id"><button type="button" class="btn btn-outline-primary">Editar</button></a> |
+    <a asp-action="Index" class="btn-outline-secondary"> <button type="button" class="btn btn-outline-secondary"> Regresar a mi Lista </button> </a>
+</div>

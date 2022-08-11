@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MVC_Favotire_Song_List_Api.Models.Song>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="padding-bottom: 50px">Mi Lista</h1>
+
+<p>
+    <a asp-action="Create">
+        <button type="button" class="btn fw-light btn-outline-secondary">
+            + Agregar Canción
+        </button>
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Title)*@
+                Titulo
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Group)*@
+                Grupo/Autor
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Year)*@
+                Año de Estreno
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Genre)*@
+                Genero Musical
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Group)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
